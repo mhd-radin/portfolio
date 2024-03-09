@@ -41,16 +41,17 @@ q('#toAbout').onclick = function() {
     color: '#eee',
 }], {
     iterations: 1,
-    duration: 100,
+    duration: 400,
     easing: 'ease-in'
   }).onfinish = function () {
     qa('.section *').forEach(function (elem, i) {
       var dis = getComputedStyle(elem)['display'];
       elem.style.display = 'none'
-      elem.style.animation = 'fadeOut 1s 1';
-      elem.style.display = dis
+      elem.style.animation = 'fadeOutDown 1s 1 ';
+      elem.style.animationDelay = (i*80)+'ms'
+      elem.style.display = 'block'
     })
-    openSection(section.about)
+    //openSection(section.about)
   }
 }
 

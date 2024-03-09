@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --color: #fff;
+  --dark-sec-color: #326996;
+  --sec-color: #6396CE;
+  --bg:
+    /*LIGHT #F6FAFF*/
+    #1C2631;
+  --sec-bg: #243C57;
+  --inverted-color: #222;
+}
+
+body {
+  font-size: 13pt;
+  margin: 0;
+  background: var(--bg);
+}
+
+nav {
+  padding: 15px;
+  background: var(--sec-bg);
+  display: flex;
+  flex-direction: row;
+  color: var(--color);
+  overflow: hidden;
+  position: relative;
+}
+
+.nav-title {
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.right-elems {
+  position: absolute;
+  right: 10px;
+}
+
+.right-elems ion-icon {
+  font-size: 38px;
+}
+
+.nav-props {
+  display: none;
+  flex-direction: row;
+  padding: 0px 3px;
+  margin: 4px;
+  margin-top: 2px;
+}
+
+.nav-prop {
+  margin: 3px;
+  margin-top: 0;
+  padding: 5px 9px;
+  transition: 0.2s;
+  font-family: "Alegreya Sans SC", sans-serif !important;
+}
+
+.nav-prop:hover {
+  transform: scale(1.1) translate(7px);
+  color: var(--dark-sec-color);
+}
+
+.nav-active-prop {
+  color: var(--sec-color);
+  font-weight: bold;
+}
+
+.sec-body {
+  color: var(--color);
+}
+
+.section {
+  min-height: 90vh;
+}
+
+#home {
+  position: relative;
+  text-overflow: break-word;
+  background: url(../assets/image/3431856.jpg) center center;
+}
+
+#home::after {
+  content: "";
+  background: linear-gradient(to top, var(--bg) 50%, transparent);
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 90vh;
+}
+
+#home * {
+  margin: 2px;
+}
+
+#home h5 {
+  font-family: "Alegreya Sans SC"
+}
+
+#home h1 {
+  --word-spacihng: 30px;
+  word-wrap: break-word;
+}
+
+#home .indro-text {
+  position: absolute;
+  bottom: 5%;
+  padding: 20px;
+}
+
+#home button {
+  border: 4px solid var(--sec-color);
+  margin: 5px;
+  padding: 5px 15px;
+  margin-left: 0px;
+  margin-top: 9px;
+  border-radius: 20px;
+  background: transparent;
+  color: var(--color);
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+#home button ion-icon {
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+.nav-ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  display: none;
+  background: transparent;
+  filter: blur(1px);
+  z-index: 9999;
+  -webkit-animation: gr_ripple 500ms 1;
+  -o-animation: gr_ripple 500ms 1;
+  animation: gr_ripple 500ms 1;
+  border: 10px solid var(--sec-color);
+  border-radius: 50%
+}
+
+@media screen and (min-width: 500px) {
+  .nav-props {
+    display: flex;
+  }
+
+  .right-elems ion-icon {
+    display: none;
+  }
+
+  .section {
+    min-height: 90vh
+  }
+
+  #home h1 {
+    word-spacing: 1px
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav-props {
+    /* background: url(../assets/image/3431856.jpg) center; */
+    background: #2C2D429E;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 70%;
+    height: 100vh;
+    box-shadow: 0 0 10px #111;
+    display: none;
+    padding: 20px;
+    margin: 0;
+    animation: props_right 1s 1;
+  }
+
+  .nav-props::after {
+    content: "gg";
+    display: flex;
+    filter: blur(5px) brightness(80%);
+    z-index: 99999999;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+  }
+
+  .nav-prop {
+    margin: 15px;
+  }
+}
+
+
+@keyframes gr_ripple {
+  0% {
+    transform: scale(0.2) translate(-2px, -2px);
+    border: 2px solid var(--sec-color);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) translate(-10px, -10px);
+    border: 10px solid var(--sec-color);
+    opacity: 0;
+  }
+}
+
+@keyframes props_right {
+  0% {
+    opacity: 0;
+    transform: translate(-110%, 0) scale(0.8);
+    border-radius: 20px;
+    margin: 10px;
+    background: var(--sec-bg);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(0%, 0) scale(0.8);
+    border-radius: 20px;
+    margin: 10px;
+    background: #2C2D429E;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0%, 0) scale(1);
+    border-radius: 0px;
+    margin: 0px;
+    background: #2C2D429E;
+  }
+}

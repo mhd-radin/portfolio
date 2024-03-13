@@ -2,9 +2,6 @@ qa('.nav-prop').forEach(function(elem) {
   elem.addEventListener('click', function(e) {
 
   })
-
-  elem.style.animation = 'fadeInLeft 1s 1'
-  elem.style.display = 'none'
 })
 
 q('nav').addEventListener('click', function(e) {
